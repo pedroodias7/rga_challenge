@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${novo-auth-git}@github.com/pedroodias7/rga_challenge.git"
+               git "https://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@github.com/pedroodias7/rga_challenge.git"
             }
         }
         
