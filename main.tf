@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "my-bucket" {
-  name                     = "bucket-1-pedroias-ems2o"
-  project                  = "tt-dev-001"
-  location                 = "US"
+  name                     = "bucket-tf-rga"
+  project                  = var.project_id
+  location                 = "EU"
   force_destroy            = true
   public_access_prevention = "enforced"
 }

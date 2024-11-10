@@ -1,11 +1,11 @@
 terraform {
   required_version = ">= 1.0.0"
 
-  # backend "gcs" {
-  #   bucket                      = "rga-challenge"
-  #   prefix                      = "rga"
-  #   # impersonate_service_account = "tf-alticept-apim-nonprod-sa@alticept-apim-nonprod.iam.gserviceaccount.com"
-  # }
+  backend "gcs" {
+    bucket                      = "bucket-tf-rga"
+    prefix                      = "rga"
+    # impersonate_service_account = "tf-alticept-apim-nonprod-sa@alticept-apim-nonprod.iam.gserviceaccount.com"
+  }
 
   required_providers {
     google = {
