@@ -9,7 +9,14 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/pedroodias7/rga_challenge.git"
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/pedroodias7/rga_challenge.git',
+                        credentialsId: 'GIT_CREDENTIALS'  // Exact credential ID
+                    ]]
+                ])
             }
         }
         
