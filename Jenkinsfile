@@ -6,18 +6,7 @@ pipeline {
 	    GIT_TOKEN = credentials('git-jenkins-token')
     }
 	
-    stages {
-        stage('Git Checkout') {
-            steps {
-                checkout([
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/pedroodias7/rga_challenge.git',
-                        credentialsId: 'GIT_CREDENTIALS'  // Exact credential ID
-                    ]]
-                ])
-            }
-        }
-        
+    stages {        
         stage('Terraform Init') {
             steps {
                 script {
