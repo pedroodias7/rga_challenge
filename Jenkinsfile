@@ -14,7 +14,7 @@ pipeline {
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
                         url: 'https://github.com/pedroodias7/rga_challenge.git',
-                        credentialsId: 'github-jenkins'  // Exact credential ID
+                        credentialsId: 'GIT_CREDENTIALS'  // Exact credential ID
                     ]]
                 ])
             }
