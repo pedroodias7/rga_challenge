@@ -5,6 +5,10 @@ pipeline {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-jenkins-key')
 	    GIT_TOKEN = credentials('git-jenkins-token')
     }
+
+    triggers {
+        githubPush()
+    }
 	
     stages {        
 
