@@ -20,18 +20,6 @@ terraform {
   }
 }
 
-
-resource "google_storage_bucket" "rga_bucket" {
-  project = var.project_id
-  name          = "rga-challenge"
-  location      = "EU"
-  force_destroy = true
-
-  uniform_bucket_level_access = true
-
-}
-
-
 locals {
   iac_terraform_roles = [
     #"iam.organizationRoleAdmin" -> Organization Scope IAM Role
@@ -39,14 +27,3 @@ locals {
     
   ]
 }
-
-# resource "google_project_iam_member" "terraform_iac_deploy" {
-#   for_each = toset(local.iac_terraform_roles)
-#   member   = "user:itzargy@gmail.com"
-#   project  = var.project_id
-#   role     = "roles/${each.key}"
-
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-# }
