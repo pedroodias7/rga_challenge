@@ -7,7 +7,7 @@ resource "google_storage_bucket" "my-bucket" {
 }
 
 resource "google_storage_bucket" "ucket" {
-  name                     = "bucket-tf-rga"
+  name                     = "bucket-tf-rga222"
   project                  = var.project_id
   location                 = "EU"
   force_destroy            = true
