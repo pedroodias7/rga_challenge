@@ -27,3 +27,26 @@ resource "google_compute_firewall" "jenkins-firewall" {
 
   source_ranges = ["0.0.0.0/0"]
 }
+
+
+import {
+  id = "projects/liquid-polygon-441116-m4/managedZones/rga"
+  to = google_dns_managed_zone.rga_zone
+}
+
+resource "google_dns_managed_zone" "rga_zone" {
+        dns_name         = "lbdemo.eu."
+        name             = "rga"
+        name_servers     = [
+            "ns-cloud-a1.googledomains.com.",
+            "ns-cloud-a2.googledomains.com.",
+            "ns-cloud-a3.googledomains.com.",
+            "ns-cloud-a4.googledomains.com.",
+        ]
+        project          = var.project_id
+        visibility       = "public"
+
+        cloud_logging_config {
+            enable_logging = false
+        }
+    }
