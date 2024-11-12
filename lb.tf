@@ -17,13 +17,13 @@ resource "google_compute_global_forwarding_rule" "https_forwarding_rule" {
 resource "google_compute_target_https_proxy" "https_proxy" {
   project = var.project_id
   name             = "proxy-target-https"
-  ssl_certificates = [data.google_compute_ssl_certificate.existing_ssl_cert.name]
+  ssl_certificates = [data.google_compute_ssl_certificate.xlb_cert.name]
   url_map          = google_compute_url_map.url_map.id
 }
 
-data "google_compute_ssl_certificate" "existing_ssl_cert" {
+data "google_compute_ssl_certificate" "xlb_cert" {
   project = var.project_id
-  name = "pedrodias-ssl"
+  name = "xlb-cert"
 }
 
 
@@ -77,13 +77,6 @@ resource "google_compute_firewall" "allow_https" {
 
 }
 
-resource "google_compute_managed_ssl_certificate" "ssl_cert" {
-  project = var.project_id
-  name = "pedrowebpage-ssl-cert"
-  managed {
-    domains = [ "pedrodiaswebpage.pt", "www.pedrodiaswebpage.pt"]
-  }
-}
 
 
 resource "google_storage_bucket_object" "index_html" {
