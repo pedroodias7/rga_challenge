@@ -37,12 +37,6 @@ import {
 resource "google_dns_managed_zone" "rga_zone" {
         dns_name         = "lbdemo.eu."
         name             = "rga"
-        name_servers     = [
-            "ns-cloud-a1.googledomains.com.",
-            "ns-cloud-a2.googledomains.com.",
-            "ns-cloud-a3.googledomains.com.",
-            "ns-cloud-a4.googledomains.com.",
-        ]
         project          = var.project_id
         visibility       = "public"
 

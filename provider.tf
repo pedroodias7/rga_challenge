@@ -18,10 +18,3 @@ terraform {
     }
   }
 }
-
-locals {
-  iac_terraform_roles = [
-    "compute.googleapis.com",
-    
-  ]
-}
