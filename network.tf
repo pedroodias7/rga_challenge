@@ -14,6 +14,14 @@ resource "google_compute_subnetwork" "jenkins_subnetwork" {
     ip_cidr_range = "192.168.1.0/24"
 }
 
+resource "google_compute_subnetwork" "jenkins_subnetwork2" {
+    region = "europe-west3"
+    project = var.project_id
+    network = google_compute_network.rga-network.self_link
+    name = "jenkins-subnet2"
+    ip_cidr_range = "192.168.8.0/24"
+}
+
 
 resource "google_compute_firewall" "jenkins-firewall" {
     project = var.project_id
