@@ -49,7 +49,6 @@ resource "google_storage_bucket_iam_binding" "public_bucket" {
   members = ["allUsers"]
 }
 
-# Step 2: Create a Backend Bucket linked to the Cloud Storage bucket
 resource "google_compute_backend_bucket" "backend_bucket" {
   project = var.project_id
   name        = "backend-bucket"

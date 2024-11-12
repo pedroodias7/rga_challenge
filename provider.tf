@@ -4,7 +4,6 @@ terraform {
   backend "gcs" {
     bucket                      = "bucket-tf-rga"
     prefix                      = "rga"
-    # impersonate_service_account = "tf-alticept-apim-nonprod-sa@alticept-apim-nonprod.iam.gserviceaccount.com"
   }
 
   required_providers {
@@ -22,7 +21,6 @@ terraform {
 
 locals {
   iac_terraform_roles = [
-    #"iam.organizationRoleAdmin" -> Organization Scope IAM Role
     "compute.googleapis.com",
     
   ]
