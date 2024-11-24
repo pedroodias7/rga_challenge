@@ -23,7 +23,7 @@ resource "google_compute_target_https_proxy" "https_proxy" {
 
 data "google_compute_ssl_certificate" "ssl_cert" {
   project = var.project_id
-  name = "xlb-cert"
+  name = "xlb-webpage-crt"
 }
 
 
