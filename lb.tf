@@ -82,3 +82,4 @@ resource "google_storage_bucket_object" "index_html" {
   bucket = google_storage_bucket.backend_bucket.name  
   source = "./index.html"  
 }
+
